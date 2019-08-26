@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/bootstrap/css.ejs %>
+    <% include partials/bootstrap/jquery.ejs %>
+    <title><%= title%></title>
+</head>
+<body>
+        <!--menu de navegacion-->
+        <% include partials/nav/nav.ejs%>
+        <!--contenido principal Home-->
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-sm-12  mx-auto">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h3>Regsitro de Tareas</h3>
+                            <p>ingresa y consula tus tareas</p>
+                            <a href="/add-task" class="btn btn-primary">Iniciar</a>
+                            <a href="/view-task" class="btn btn-success">ver tareas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <% include partials/bootstrap/js.ejs %>
+</body>
+</html>

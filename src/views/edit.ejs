@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/bootstrap/css.ejs %>
+    <% include partials/bootstrap/jquery.ejs %>
+    <title><%= title%></title>
+</head>
+<body>
+    <!--menu de navegacion-->
+    <% include partials/nav/nav.ejs%>
+
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-sm-4 mx-auto">
+                    <%if(task.length){
+                        task.forEach(e => { 
+                    %>
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="/edit" method="POST">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" class="form-control" value="<%= e.id%>" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" value="<%= e.title%>" type="text" placeholder="title" name="title" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" value="<%= e.url%>" type="url" placeholder="url" name="url" />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea placeholder="description" name="description" class="form-control"><%= e.description%></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-block">actualizar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                   <%         
+                    })    
+                    %>
+
+                    <%}%>
+                </div>
+            </div>
+        </div>
+
+    <% include partials/bootstrap/js.ejs %>
+</body>
+</html>

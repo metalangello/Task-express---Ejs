@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/bootstrap/css.ejs %>
+    <% include partials/bootstrap/jquery.ejs %>
+    <title><%= title%></title>
+</head>
+<body>
+    <!--menu de navegacion-->
+    <% include partials/nav/nav.ejs%>
+
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-sm-4 mx-auto">
+                        <%
+                        if(alert.length){%>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <%= alert%>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
+            <div class="row p-2">
+                <%
+                    if(tasks.length){ 
+                        tasks.forEach(task =>{ %>
+                            <div class="col-sm-4">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <a href=<%=task.url%>
+                                            <h4><%= task.title%></h4>
+                                        </a>
+                                        <p><%= task.description%></p>
+                                        <a href="/delete/<%= task.id%>" class="btn btn-danger">delete</a>
+                                        <a href="/edit/<%= task.id%>" class="btn btn-primary">edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                <%
+                        })
+                %>
+                
+                <%
+                    }
+                %>
+            </div>
+        </div>
+
+    <% include partials/bootstrap/js.ejs %>
+</body>
+</html>
