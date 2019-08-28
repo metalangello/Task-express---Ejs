@@ -5,6 +5,8 @@ const session = require('express-session');
 const sessiondb = require('express-mysql-session');
 const flash = require('connect-flash');
 const { database } = require('./keys');
+const passport = require('passport');
+
 //inicializacion
 
 const app = express();
@@ -26,6 +28,8 @@ app.use(flash());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //variables globales
 app.use((req, res, next) => {
