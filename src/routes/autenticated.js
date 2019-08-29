@@ -9,4 +9,10 @@ router.get('/signup', (req, res) => {
     res.render('sign/signup.ejs');
 })
 
+//rut post signup
+router.post('/signup', passport.authenticate('Local.signup', {
+    successRedirect: '/profile',
+    failureRedirect: '/signup',
+    failureFlash: true
+}));
 module.exports = router;
