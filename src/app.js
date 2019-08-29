@@ -10,7 +10,6 @@ const passport = require('passport');
 //inicializacion
 
 const app = express();
-require('./lib/passport');
 
 //configuracion
 
@@ -41,7 +40,6 @@ app.use((req, res, next) => {
 //routes
 
 app.use(require('./routes'));
-app.use(require('./routes/autenticated.js'));
 
 //publics
 
