@@ -13,15 +13,26 @@
     <% include ../partials/nav/nav.ejs%>
 
         <div class="container">
-            <div class="row">
+            <div class="row p-4">
                 <div class="col-sm-4 mx-auto">
                     <div class="card text-center">
                         <div class="card-header">
                             <h3>Signup</h3>
                         </div>
                         <div class="card-body">
-                            <form action="" method="">
-                                
+                            <form action="" method="POST">
+                                <div class="form-group">
+                                    <input typer="text" placeholder="fullname" name="fullname" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="user" name="user" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="*****" name="pass" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block">send</button>
+                                </div>
                             </form>
                         </div>
                     </div>
