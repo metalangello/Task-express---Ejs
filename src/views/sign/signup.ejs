@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include ../partials/bootstrap/css.ejs %>
     <% include ../partials/bootstrap/jquery.ejs %>
-    <title>signup</title>
+    <title><%= title%></title>
 </head>
 <body>
     
@@ -17,7 +17,7 @@
                 <div class="col-sm-4 mx-auto">
                     <div class="card text-center">
                         <div class="card-header">
-                            <h3>Signup</h3>
+                            <h3><%= title%></h3>
                         </div>
                         <div class="card-body">
                             <form action="/signup" method="POST">

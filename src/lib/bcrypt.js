@@ -11,6 +11,8 @@ Bcrypt.passwordEncrypt = async (password) => {
 }
 
 //decrypt - signin
-
+Bcrypt.passwordDecrypt = async (password, passwordDB) => {
+    return await bcrypt.compare(password, passwordDB);
+}
 
 module.exports = Bcrypt;

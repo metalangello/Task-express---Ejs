@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partials/bootstrap/css.ejs %>
+    <% include ../partials/bootstrap/jquery.ejs %>
+    <title><%= title%></title>
+</head>
+<body>
+        <% include ../partials/nav/nav.ejs%>
+
+        <div class="container">
+                <div class="row p-4">
+                    <div class="col-sm-4 mx-auto">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <h3><%= title%></h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="/signin" method="POST">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="user" name="user" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" placeholder="*****" name="pass" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-block">send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <% include ../partials/bootstrap/js.ejs %>
+</body>
+</html>
