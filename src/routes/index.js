@@ -6,8 +6,12 @@ const pool = require('../database');
 
 //rur ini
 
-router.get('/', (req, res) => {
-    res.send('bienvenido a la raiz del servidor');
+router.get('/task', (req, res) => {
+    res.render('task', {
+        title: 'TaskApp',
+        contenido: 'Binevenidos a TaskApp',
+        description: 'Guarda, Edita, Modifica, elimina y lleva el control de tus urls'
+    });
 })
 
 //rut ini user

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/bootstrap/css.ejs%>
+    <% include partials/bootstrap/jquery.ejs%>
+    <title><%= title%></title>
+</head>
+<body>
+        <!--nav-->
+        <% include partials/nav/nav.ejs %>
+
+        <!--contenido inicial-->
+
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-sm-12 mx-auto text-center">
+                    <h3><%= contenido%></h3>
+                    <p><%= description%></p>
+                </div>
+            </div>
+        </div>
+
+
+    <% include partials/bootstrap/js.ejs%>
+</body>
+</html>
