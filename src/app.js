@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 //routes
 
 app.use(require('./routes'));
-
+app.use(require('./routes/autenticated'));
 //publics
 
 app.use(express.static(path.join(__dirname, 'public')));
