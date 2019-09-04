@@ -10,6 +10,7 @@ const passport = require('passport');
 //inicializacion
 
 const app = express();
+require('./lib/passport');
 
 //configuracion
 
@@ -34,6 +35,7 @@ app.use(passport.session());
 //variables globales
 app.use((req, res, next) => {
     app.locals.alert = req.flash('alert');
+    app.locals.err = req.flash('err');
     next();
 })
 
