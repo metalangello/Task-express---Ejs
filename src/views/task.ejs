@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include partials/bootstrap/css.ejs%>
     <% include partials/bootstrap/jquery.ejs%>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title><%= title%></title>
 </head>
-<body>
+<body background="/imagenes/fondo.jpg">
         <!--nav-->
         <% include partials/nav/nav.ejs %>
 
@@ -17,19 +18,17 @@
         <div class="container">
             <div class="row p-4">
                 <div class="col-sm-12 mx-auto text-center">
-                    <h3><%= contenido%></h3>
-                    <p><%= description%></p>
+                    <h3 class="color-text"><%= contenido%></h3>
+                    <p class="color-text"><%= description%></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 mx-auto">
-                    <div class="card  text-center">
-                        <div class="card-body">
-                            <h5>Inicia sesion ahora!</h5>
-                            <a href="/signin" class="btn btn-success">Signin</a>
-                            <a href="/signup" class="btn btn-primary">Signup</a>
-                        </div>
-                    </div>
+                <div class="col-sm-4 mx-auto text-center">
+                    
+                    <h5 class="color-text">Inicia sesion ahora!</h5>
+                    <a href="/signin" class="btn btn-success">Signin</a>
+                    <a href="/signup" class="btn btn-primary">Signup</a>
+                       
                 </div>
             </div>
         </div>
