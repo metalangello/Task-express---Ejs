@@ -35,7 +35,8 @@ router.post('/add-task', isLoggedin, async (req, res) => {
     const task = {
         title,
         url,
-        description
+        description,
+        id_user: req.user.id
     }
     //console.log(task);
     await pool.query('INSERT INTO task SET ?',[task]);
@@ -46,7 +47,7 @@ router.post('/add-task', isLoggedin, async (req, res) => {
 
 //rut get /view-task
 router.get('/view-task', isLoggedin, async (req, res) => {
-    const tasks = await pool.query('SELECT * FROM task');
+    const tasks = await pool.query('SELECT * FROM task WHERE id_us = ?',[req.user.id]);
     res.render('view-task',{
         tasks,
         title: 'Task'
