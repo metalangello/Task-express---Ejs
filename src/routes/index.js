@@ -36,7 +36,7 @@ router.post('/add-task', isLoggedin, async (req, res) => {
         title,
         url,
         description,
-        id_user: req.user.id
+        id_us: req.user.id
     }
     //console.log(task);
     await pool.query('INSERT INTO task SET ?',[task]);
