@@ -6,9 +6,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/add-task">Ingresar tarea</a>
-                    <a class="nav-item nav-link" href="/view-task">ver tareas</a>
-                    <a class="nav-item nav-link" href="/logout">logout</a>
+                    <%
+                        if(user){
+                    %>
+                        <a class="nav-item nav-link" href="/add-task">Ingresar tarea</a>
+                        <a class="nav-item nav-link" href="/view-task">ver tareas</a>
+                        <a class="nav-item nav-link" href="/logout">logout</a>
+                    <%
+                        }
+                        else{
+                    %>
+                        <a class="nav-item nav-link" href="/signin">Iniciar sesion</a>
+                        <a class="nav-item nav-link" href="/signup">Registro</a>
+                    <%
+                        }
+                    %>
+                    
                 </div>
             </div>
         </div>
